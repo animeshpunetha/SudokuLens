@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "date": "2026-11-18",
+    "platform": "Linux-6.18.44-fc-v595-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "model_backend": "onnxruntime"
+  },
+  "digit_recognition": {
+    "chars74k_heldout": {
+      "n": 98,
+      "new_model": 0.9897959183673469,
+      "original_model": 0.40816326530612246
+    },
+    "printed_unseen_fonts": {
+      "n": 1794,
+      "new_model": 1.0,
+      "original_model": 1.0
+    },
+    "handwritten_mnist_test": {
+      "n": 1835,
+      "new_model": 0.9940054495912807,
+      "original_model": 0.8773841961852861
+    }
+  },
+  "end_to_end": {
+    "new_pipeline": {
+      "boards": 200,
+      "board_detected": 1.0,
+      "cell_accuracy": 0.9995061728395062,
+      "board_read_exactly": 0.96,
+      "solved_correctly": 0.96,
+      "median_ms_per_image": 12.068590000126278,
+      "solved_correctly_printed": 1.0,
+      "solved_correctly_handwritten": 0.84
+    },
+    "original_pipeline": {
+      "boards": 200,
+      "board_detected": 0.91,
+      "cell_accuracy": 0.87,
+      "board_read_exactly": 0.16,
+      "solved_correctly": 0.165,
+      "median_ms_per_image": 75.14167700003327
+    }
+  },
+  "solver": {
+    "sets": {
+      "random (24-36 givens)": {
+        "n": 200,
+        "new_ms_mean": 0.32847538499822804,
+        "original_ms_mean": 4.141864170002236,
+        "speedup": 12.609359358919937
+      },
+      "newspaper easy": {
+        "n": 1,
+        "new_ms_mean": 0.08427500006291666,
+        "original_ms_mean": 1.8987430000834138,
+        "speedup": 22.530323330357533
+      }
+    },
+    "hard_puzzles": {
+      "Arto Inkala 2012 ('world's hardest')": {
+        "new_ms": 11.539119000190112,
+        "original_ms": 589.5818970000164,
+        "speedup": 51.09418639241893
+      },
+      "AI Escargot": {
+        "new_ms": 0.8897909999632247,
+        "original_ms": 9.492313999999169,
+        "speedup": 10.668026537008677
+      },
+      "Hard benchmark A (22 givens)": {
+        "new_ms": 0.6886809999286925,
+        "original_ms": 195.3819929999554,
+        "speedup": 283.7046368640716
+      },
+      "Easter Monster": {
+        "new_ms": 9.105223000005935,
+        "original_ms": 218.27450600017073,
+        "speedup": 23.97245031780424
+      },
+      "Hard benchmark B (20 givens)": {
+        "new_ms": 1.1575070000162668,
+        "original_ms": 206.36134000005768,
+        "speedup": 178.28085704635706
+      },
+      "17-clue puzzle (minimum possible givens)": {
+        "new_ms": 0.5945719999544963,
+        "original_ms": 19503.33508599988,
+        "speedup": 32802.31004401907
+      }
+    },
+    "hard_summary": {
+      "new_ms_mean": 3.995815500009788,
+      "original_ms_mean": 3453.737856000013,
+      "new_ms_max": 11.539119000190112,
+      "original_ms_max": 19503.33508599988,
+      "speedup": 864.3386702893446
+    }
+  },
+  "inference": {
+    "onnx_load_ms": 4.65708599995196,
+    "keras_load_ms": 90.93586499989215,
+    "digits_per_board": 24,
+    "onnx_batched_ms": 1.7847840000513315,
+    "keras_batched_ms": 15.243612000062967,
+    "original_per_cell_predict_ms": 1000.5700479998723,
+    "speedup_vs_original": 560.6112829177622,
+    "full_read_grid_ms": 10.499639500039848,
+    "onnx_model_mb": 1.877375
+  },
+  "training": {
+    "samples": {
+      "chars74k_train": 390,
+      "chars74k_test": 98,
+      "synthetic_cells": 44965,
+      "mnist": 22500,
+      "train": 64229,
+      "val": 7136
+    },
+    "params": 468649,
+    "epochs_run": 20,
+    "train_seconds": 858.5
+  }
+}
